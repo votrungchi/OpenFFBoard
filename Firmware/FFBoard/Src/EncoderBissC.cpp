@@ -17,7 +17,7 @@ const ClassIdentifier EncoderBissC::getInfo(){
 	return info;
 }
 
-EncoderBissC::EncoderBissC() {
+EncoderBissC::EncoderBissC() : spi_config{*getExternalSPI_CSPins()[0]} {
 	setPos(0);
 
 	this->spi_config.peripheral.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
