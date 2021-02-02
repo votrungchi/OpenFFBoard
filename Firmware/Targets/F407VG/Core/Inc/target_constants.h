@@ -33,6 +33,7 @@
 #define TMC4671DRIVER
 #define PWMDRIVER
 #define LOCALENCODER
+#define BISSCENCODER
 #define CANBUS
 
 #define TMCTEMP // Enable tmc temperature shutdown
