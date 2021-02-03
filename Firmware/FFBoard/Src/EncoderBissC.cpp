@@ -17,7 +17,7 @@ const ClassIdentifier EncoderBissC::getInfo(){
 	return info;
 }
 
-EncoderBissC::EncoderBissC() : spi_config{*getExternalSPI_CSPins()[0]} {
+EncoderBissC::EncoderBissC() : spi_config{*getExternalSPI_CSPins()[1]} {
 	setPos(0);
 
 	this->spi_config.peripheral.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_64;
@@ -82,8 +82,12 @@ int32_t EncoderBissC::getPos(){
 	rxData64 |= (uint64_t)decod_buf[6] << 8;
 	rxData64 |= (uint64_t)decod_buf[7];
 
-	while(!(0x8000000000000000 & rxData64))
-		rxData64<<=1;
+	for(int i = 0; i < 64; i++){
+		if(!(0x8000000000000000 & rxData64))
+			rxData64<<=1;
+		else
+			break;
+	}
 	//TODO rxData64 <<= clz64(rxData64);
 
 	rxData64 >>= 64 -(1+1+22+1+1+6); //Align bitstream to left (Startbit, CDS, 22-bit Position, Error, Warning, CRC)
