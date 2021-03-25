@@ -57,7 +57,7 @@ Axis::Axis(char axis,volatile Control_t* control) : NormalizedAxis(axis), drv_ch
 		this->flashAddrs = AxisFlashAddrs({ADR_AXIS3_CONFIG});
 	}
 
-	restoreFlash(); // Load parameters
+//	restoreFlash(); // Load parameters (Don't call called later from FFBWheel)
 }
 
 Axis::~Axis()
@@ -84,6 +84,7 @@ void Axis::restoreFlash(){
 }
 // Saves parameters to flash
 void Axis::saveFlash(){
+	NormalizedAxis::saveFlash();
 	Flash_Write(flashAddrs.config, Axis::encodeConfToInt(this->conf));
 }
 
