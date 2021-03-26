@@ -100,13 +100,11 @@ void EffectsCalculator::calculateEffects(std::vector<Axis *> axes)
 
 	int32_t forceX = 0;
 	int32_t forceY = 0;
-#if MAX_AXIS == 3
-	int32_t forceZ = 0;
-#endif
 	int32_t forceVector = 0;
 	uint8_t axisCount = axes.size();
 	bool validY = axisCount > 1;
 #if MAX_AXIS == 3
+	int32_t forceZ = 0;
 	bool validZ = axisCount > 2;
 #endif
 
@@ -144,13 +142,13 @@ void EffectsCalculator::calculateEffects(std::vector<Axis *> axes)
 			forceY += calcComponentForce(effect, forceVector, axes[1]->getMetrics(), axes[1]->getEffectGains(), 1, axisCount);
 		}
 
-		if (effect->duration != FFB_EFFECT_DURATION_INFINITE &&
-		HAL_GetTick() > effect->startTime + effect->duration)
-		{
-			effect->state = 0;
-		}
+//		if (effect->duration != FFB_EFFECT_DURATION_INFINITE &&
+//		HAL_GetTick() > effect->startTime + effect->duration)
+//		{
+//			effect->state = 0;
+//		}
 	}
-	// Set axisEffectParams torque
+
 	axes[0]->setEffectTorque(forceX);
 	if (validY)
 	{
@@ -341,8 +339,8 @@ int32_t EffectsCalculator::calcComponentForce(FFB_Effect *effect, int32_t forceV
 
 	case FFB_EFFECT_FRICTION:
 	{
-		effect->conditions[con_idx].negativeSaturation = FRICTION_SATURATION;
-		effect->conditions[con_idx].positiveSaturation = FRICTION_SATURATION;
+//		effect->conditions[con_idx].negativeSaturation = FRICTION_SATURATION;
+//		effect->conditions[con_idx].positiveSaturation = FRICTION_SATURATION;
 		float metric = effect->filter[con_idx]->process(metrics->speed) * .25;
 		result_torque -= calcConditionEffectForce(effect, metric, gain->friction,
 											   con_idx, .04f, angle_ratio);
@@ -358,8 +356,8 @@ int32_t EffectsCalculator::calcComponentForce(FFB_Effect *effect, int32_t forceV
 
 	case FFB_EFFECT_INERTIA:
 	{
-		effect->conditions[con_idx].negativeSaturation = INERTIA_SATURATION;
-		effect->conditions[con_idx].positiveSaturation = INERTIA_SATURATION;
+//		effect->conditions[con_idx].negativeSaturation = INERTIA_SATURATION;
+//		effect->conditions[con_idx].positiveSaturation = INERTIA_SATURATION;
 		float metric = effect->filter[con_idx]->process(metrics->accel*4);
 		result_torque -= calcConditionEffectForce(effect, metric, gain->inertia,
 									   con_idx, 0.4f, angle_ratio);
