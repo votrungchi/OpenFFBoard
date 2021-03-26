@@ -529,7 +529,7 @@ void EffectsCalculator::logEffectType(uint8_t type){
 
 std::string EffectsCalculator::listEffectsUsed(){
 	std::string effects_list = "";
-	static const char *effects[12] = {"Constant","Ramp","Square","Sine","Triangle","Sawtooth Up","Sawtooth Down","Spring","Damper","Inertia","Friction","Custom"};
+	static const char *effects[12] = {"Constant,","Ramp,","Square,","Sine,","Triangle,","Sawtooth Up,","Sawtooth Down,","Spring,","Damper,","Inertia,","Friction,","Custom,"};
 
 	if(effects_used == 0){
 		return "None";
@@ -538,9 +538,9 @@ std::string EffectsCalculator::listEffectsUsed(){
 	for (int i=0;i < 12; i++) {
 		if((effects_used >> i) & 1) {
 			effects_list += effects[i];
-			effects_list += "\n";
 		}
 	}
+	effects_list.pop_back();
 	return effects_list;
 }
 
