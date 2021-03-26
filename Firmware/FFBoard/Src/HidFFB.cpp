@@ -246,6 +246,7 @@ void HidFFB::new_effect(FFB_CreateNewEffect_Feature_Data_t* effect){
 	//CommandHandler::logSerial("Creating Effect: " + std::to_string(effect->effectType) +  " at " + std::to_string(index) + "\n");
 	FFB_Effect new_effect;
 	new_effect.type = effect->effectType;
+	this->effects_calc->logEffectType(effect->effectType);
 
 	set_filters(&new_effect);
 

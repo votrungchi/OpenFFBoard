@@ -17,8 +17,6 @@
 #define DEG_TO_RAD ((float)((float)3.14159265 / 180.0))
 #define DIRECTION_ENABLE (1 << MAX_AXIS)
 
-#define FRICTION_SATURATION 32767
-#define INERTIA_SATURATION 32767
 #define EFFECT_STATE_INACTIVE 0
 
 //#define degreesToRadians(angleDegrees) ((angleDegrees)*M_PI / 180.0)
@@ -522,6 +520,31 @@ void EffectsCalculator::setCfFilter(uint32_t freq)
 
 float EffectsCalculator::getCfFilterFreq() { return cfFilter_f; }
 
+
+void EffectsCalculator::logEffectType(uint8_t type){
+	if(type > 0 && type < 32){
+		effects_used |= 1<<(type-1);
+	}
+}
+
+std::string EffectsCalculator::listEffectsUsed(){
+	std::string effects_list = "";
+	static const char *effects[12] = {"Constant","Ramp","Square","Sine","Triangle","Sawtooth Up","Sawtooth Down","Spring","Damper","Inertia","Friction","Custom"};
+
+	if(effects_used == 0){
+		return "None";
+	}
+
+	for (int i=0;i < 12; i++) {
+		if((effects_used >> i) & 1) {
+			effects_list += effects[i];
+			effects_list += "\n";
+		}
+	}
+	return effects_list;
+}
+
+
 ParseStatus EffectsCalculator::command(ParsedCommand *cmd, std::string *reply)
 {
 	ParseStatus flag = ParseStatus::OK;
@@ -534,6 +557,20 @@ ParseStatus EffectsCalculator::command(ParsedCommand *cmd, std::string *reply)
 		else if (cmd->type == CMDtype::set)
 		{
 			setCfFilter(cmd->val);
+		}
+	}else if (cmd->cmd == "effects")
+	{
+		if (cmd->type == CMDtype::get)
+		{
+			*reply += listEffectsUsed();
+		}
+		else if (cmd->type == CMDtype::set)
+		{
+			effects_used = 0;
+		}
+		else
+		{
+			*reply += "List effects used.";
 		}
 	}else{
 		flag = ParseStatus::NOT_FOUND;
