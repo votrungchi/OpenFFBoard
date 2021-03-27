@@ -54,6 +54,9 @@ Purpose : Low-level functions for using printf() via RTT in GCC.
 Revision: $Rev: 20755 $
 ----------------------------------------------------------------------
 */
+
+#ifdef USE_SEGGER_RTT
+
 #if (defined __GNUC__) && !(defined __SES_ARM) && !(defined __CROSSWORKS_ARM) && !(defined __ARMCC_VERSION) && !(defined __CC_ARM)
 
 #include <reent.h>  // required for _write_r
@@ -122,4 +125,6 @@ _ssize_t _write_r(struct _reent *r, int file, const void *ptr, size_t len) {
 }
 
 #endif
+
+#endif // USE_SEGGER_RTT
 /****** End Of File *************************************************/

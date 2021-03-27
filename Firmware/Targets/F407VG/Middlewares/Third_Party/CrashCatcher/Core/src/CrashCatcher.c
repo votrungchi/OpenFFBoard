@@ -12,6 +12,10 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+
+// Use Segger J-Link RTT & Adam Green's CrashCatcher HardFault_Handler
+#ifdef USE_CUSTOM_HARDFAULT_HANDLER
+
 #include <CrashCatcher.h>
 #include "CrashCatcherPriv.h"
 #include <string.h>
@@ -283,3 +287,4 @@ static void advanceProgramCounterPastHardcodedBreakpoint(const Object* pObject)
     if (pObject->info.isBKPT)
         pObject->pSP->pc += 2;
 }
+#endif

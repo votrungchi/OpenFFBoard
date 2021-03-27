@@ -12,6 +12,8 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+#ifdef USE_CUSTOM_HARDFAULT_HANDLER
+
 #include <CrashCatcher.h>
 #include "CrashCatcherPriv.h"
 #include <string.h>
@@ -283,3 +285,4 @@ static void advanceProgramCounterPastHardcodedBreakpoint(const Object* pObject)
     if (pObject->info.isBKPT)
         pObject->pSP->pc += 2;
 }
+#endif

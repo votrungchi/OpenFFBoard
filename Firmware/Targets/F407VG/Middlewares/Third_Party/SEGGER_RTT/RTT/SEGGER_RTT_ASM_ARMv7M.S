@@ -14,6 +14,7 @@ Additional information:
   GCC and clang (Embedded Studio) and IAR.
 */
 
+#ifdef USE_SEGGER_RTT
 #define SEGGER_RTT_ASM      // Used to control processed input from header file
 #include "SEGGER_RTT.h"
 
@@ -239,4 +240,5 @@ _Case3:
 #endif  // defined (RTT_USE_ASM) && (RTT_USE_ASM == 1)
         _END
 
+#endif // USE_SEGGER_RTT
 /*************************** End of file ****************************/

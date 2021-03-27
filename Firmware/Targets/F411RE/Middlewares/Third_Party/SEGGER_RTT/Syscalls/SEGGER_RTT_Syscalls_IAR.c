@@ -54,6 +54,9 @@ Purpose : Low-level functions for using printf() via RTT in IAR.
 Revision: $Rev: 17697 $
 ----------------------------------------------------------------------
 */
+
+#ifdef USE_SEGGER_RTT
+
 #ifdef __IAR_SYSTEMS_ICC__
 
 //
@@ -117,4 +120,6 @@ size_t __write_buffered(int handle, const unsigned char * buffer, size_t size) {
 }
 
 #endif
+
+#endif // USE_SEGGER_RTT
 /****** End Of File *************************************************/

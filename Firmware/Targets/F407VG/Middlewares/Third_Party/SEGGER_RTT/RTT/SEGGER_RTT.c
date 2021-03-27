@@ -73,6 +73,8 @@ Additional information:
 
 ----------------------------------------------------------------------
 */
+#ifdef USE_SEGGER_RTT
+
 
 #include "SEGGER_RTT.h"
 
@@ -2074,5 +2076,5 @@ unsigned SEGGER_RTT_GetBytesInBuffer(unsigned BufferIndex) {
   }
   return r;
 }
-
+#endif // USE_SEGGER_RTT
 /*************************** End of file ****************************/

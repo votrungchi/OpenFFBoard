@@ -52,6 +52,9 @@ Purpose : Replacement for printf to write formatted data via RTT
 Revision: $Rev: 17697 $
 ----------------------------------------------------------------------
 */
+
+#ifdef USE_SEGGER_RTT
+
 #include "SEGGER_RTT.h"
 #include "SEGGER_RTT_Conf.h"
 
@@ -502,4 +505,6 @@ int SEGGER_RTT_printf(unsigned BufferIndex, const char * sFormat, ...) {
   va_end(ParamList);
   return r;
 }
+
+#endif // USE_SEGGER_RTT
 /*************************** End of file ****************************/

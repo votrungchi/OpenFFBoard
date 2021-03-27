@@ -5,9 +5,13 @@
  *      Author: Lidders
  */
 
+#include "main.h"
+
+#ifdef USE_CUSTOM_HARDFAULT_HANDLER
+
 #include <assert.h>
 #include "CrashCatcher.h"
-#include "main.h"
+
 #include "SEGGER_RTT.h"
 
 
@@ -125,3 +129,4 @@ CrashCatcherReturnCodes CrashCatcher_DumpEnd(void)
     return CRASH_CATCHER_EXIT;
 }
 
+#endif

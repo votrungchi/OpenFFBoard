@@ -23,6 +23,9 @@
 #ifndef __MAIN_H
 #define __MAIN_H
 
+// Use Segger J-Link RTT & Adam Green's CrashCatcher HardFault_Handler
+//#define USE_CUSTOM_HARDFAULT_HANDLER
+
 #ifdef __cplusplus
 extern "C" {
 #endif

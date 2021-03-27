@@ -12,6 +12,9 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+
+#ifdef USE_CUSTOM_HARDFAULT_HANDLER
+
 #include "CrashCatcherPriv.h"
 
 /* Implementation of ARMv7-M assembly language code to trap exceptions and call CrashCatcher_Entry(). */
@@ -113,3 +116,4 @@ CrashCatcher_CopyUpperFloatingPointRegisters:
 
 
     .end
+#endif
