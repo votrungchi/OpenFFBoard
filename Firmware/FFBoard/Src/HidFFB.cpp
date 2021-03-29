@@ -123,7 +123,7 @@ void HidFFB::hidOut(uint8_t report_id, hid_report_type_t report_type, uint8_t co
 		}else{
 			if(effects[id].state != 1){
 				set_filters(&effects[id]);
-				effects[id].startTime = 0; // When an effect was stopped reset all parameters that could cause jerking
+				//effects[id].startTime = 0; // When an effect was stopped reset all parameters that could cause jerking
 			}
 			//printf("Start %d\n",report[1]);
 			effects[id].startTime = HAL_GetTick(); // + effects[id].startDelay;
@@ -147,9 +147,11 @@ void HidFFB::hidOut(uint8_t report_id, hid_report_type_t report_type, uint8_t co
 void HidFFB::free_effect(uint16_t idx){
 	if(idx < MAX_EFFECTS){
 		effects[idx].type=FFB_EFFECT_NONE;
-		if(effects[idx].filter != nullptr){
-			delete effects[idx].filter;
-			effects[idx].filter = nullptr;
+		for(int i=0; i< MAX_AXIS; i++) {
+			if(effects[idx].filter[i] != nullptr){
+				delete effects[idx].filter[i];
+				effects[idx].filter[i] = nullptr;
+			}
 		}
 	}
 }
@@ -244,6 +246,7 @@ void HidFFB::new_effect(FFB_CreateNewEffect_Feature_Data_t* effect){
 	//CommandHandler::logSerial("Creating Effect: " + std::to_string(effect->effectType) +  " at " + std::to_string(index) + "\n");
 	FFB_Effect new_effect;
 	new_effect.type = effect->effectType;
+	this->effects_calc->logEffectType(effect->effectType);
 
 	set_filters(&new_effect);
 
@@ -293,13 +296,19 @@ void HidFFB::set_condition(FFB_SetCondition_Data_t *cond){
 		return; // sanity check!
 	}
 	FFB_Effect *effect = &effects[cond->effectBlockIndex - 1];
-	effect->conditions[axis].cpOffset = cond->cpOffset;// * 256;
-	effect->conditions[axis].negativeCoefficient = cond->negativeCoefficient;// * 256;
-	effect->conditions[axis].positiveCoefficient = cond->positiveCoefficient;// * 256;
-	effect->conditions[axis].negativeSaturation = cond->negativeSaturation;// * 256;
-	effect->conditions[axis].positiveSaturation = cond->positiveSaturation;// * 256;
+	effect->conditions[axis].cpOffset = cond->cpOffset;
+	effect->conditions[axis].negativeCoefficient = cond->negativeCoefficient;
+	effect->conditions[axis].positiveCoefficient = cond->positiveCoefficient;
+	effect->conditions[axis].negativeSaturation = cond->negativeSaturation;
+	effect->conditions[axis].positiveSaturation = cond->positiveSaturation;
 	effect->conditions[axis].deadBand = cond->deadBand;
 	effect->conditionsCount++;
+	if(effect->conditions[axis].positiveSaturation == 0){
+		effect->conditions[axis].positiveSaturation = 0x7FFF;
+	}
+	if(effect->conditions[axis].negativeSaturation == 0){
+		effect->conditions[axis].negativeSaturation = 0x7FFF;
+	}
 }
 
 void HidFFB::set_envelope(FFB_SetEnvelope_Data_t *report){

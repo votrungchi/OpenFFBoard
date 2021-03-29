@@ -57,7 +57,7 @@ Axis::Axis(char axis,volatile Control_t* control) : NormalizedAxis(axis), drv_ch
 		this->flashAddrs = AxisFlashAddrs({ADR_AXIS3_CONFIG});
 	}
 
-	restoreFlash(); // Load parameters
+//	restoreFlash(); // Load parameters (Don't call called later from FFBWheel)
 }
 
 Axis::~Axis()
@@ -353,7 +353,7 @@ void Axis::processHidCommand(HID_Custom_Data_t *data){
 
 ParseStatus Axis::command(ParsedCommand *cmd, std::string *reply)
 {
-	if (cmd->prefix != axis){
+	if ((cmd->prefix & 0xDF) != axis){
 		return ParseStatus::NOT_FOUND;
 	}
 
