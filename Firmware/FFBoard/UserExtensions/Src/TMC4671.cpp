@@ -303,7 +303,10 @@ float TMC4671::getTemp(){
 	writeReg(0x03, 2);
 	int32_t adcval = ((readReg(0x02)) & 0xffff) - 0x7fff; // Center offset
 	adcval -= tmcOffset;
-	float r = thermistor_R2 * (((float)43252 / (float)adcval) -1.0); //43252 equivalent ADC count if it was 3.3V and not 2.5V
+	if(adcval == 0){
+		return 0.0;
+	}
+	float r = thermistor_R2 * (((float)43252 / (float)adcval)); //43252 equivalent ADC count if it was 3.3V and not 2.5V
 
 	// Beta
 	r = (1.0 / 298.15) + log(r / thermistor_R) / thermistor_Beta;
@@ -1634,6 +1637,7 @@ uint32_t TMC4671::readReg(uint8_t reg){
 	return ret;
 }
 
+// TODO debug possible deadlock if multiple threads access spi port
 __attribute__((optimize("-Ofast")))
 void TMC4671::writeReg(uint8_t reg,uint32_t dat){
 
@@ -1645,10 +1649,10 @@ void TMC4671::writeReg(uint8_t reg,uint32_t dat){
 	else
 		RessourceManager::getSpiSemaphore(1)->Take();
 
+	spiActive = true; // Signal the dma callback that this class actually used the port
 	spi_buf[0] = (uint8_t)(0x80 | reg);
 	dat =__REV(dat);
 	memcpy(spi_buf+1,&dat,4);
-	spiActive = true; // Signal the dma callback that this class actually used the port
 	HAL_GPIO_WritePin(this->csport,this->cspin,GPIO_PIN_RESET);
 	HAL_SPI_Transmit_DMA(this->spi,spi_buf,5);
 	//HAL_GPIO_WritePin(this->csport,this->cspin,GPIO_PIN_SET);
