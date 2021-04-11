@@ -54,7 +54,24 @@
 /* USER CODE END FunctionPrototypes */
 
 /* Hook prototypes */
+void configureTimerForRunTimeStats(void);
+unsigned long getRunTimeCounterValue(void);
 void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName);
+
+/* USER CODE BEGIN 1 */
+/* Functions needed when configGENERATE_RUN_TIME_STATS is on */
+__weak void configureTimerForRunTimeStats(void)
+{
+	CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+    DWT->CYCCNT = 0;
+    DWT->CTRL &= ~DWT_CTRL_CYCCNTENA_Msk; // disable till we explicitly enable with taskstats=1
+}
+
+__weak unsigned long getRunTimeCounterValue(void)
+{
+	 return DWT->CYCCNT;
+}
+/* USER CODE END 1 */
 
 /* USER CODE BEGIN 4 */
 void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName)

@@ -20,6 +20,7 @@
 #include <malloc.h>
 #include "FFBoardMain.h"
 #include "critical.hpp"
+#include "task.h"
 
 extern ClassChooser<FFBoardMain> mainchooser;
 
@@ -99,7 +100,8 @@ void FFBoardMainCommandThread::printErrors(std::string *reply){
 }
 
 ParseStatus FFBoardMainCommandThread::executeSysCommand(ParsedCommand* cmd,std::string* reply){
-	ParseStatus flag = ParseStatus::OK;
+	 static char statsBuffer[255] = {0};
+	 ParseStatus flag = ParseStatus::OK;
 
 	if(cmd->cmd == "help"){
 		std::string help, last_help = "";
@@ -209,7 +211,21 @@ ParseStatus FFBoardMainCommandThread::executeSysCommand(ParsedCommand* cmd,std::
 		}else{
 			*reply += "format=1 will ERASE ALL stored variables. Be careful!";
 		}
-	}else{
+	 }else if(cmd->cmd == "taskstats"){
+		 if(cmd->type == CMDtype::get || cmd->type == CMDtype::none){
+			 vTaskGetRunTimeStats(statsBuffer);
+			 *reply+= std::string("\n") + statsBuffer;
+		 }else if(cmd->type == CMDtype::set){
+			 if(cmd->val > 0){ // arm the cycle counter
+				 DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+			 }else { // disable the cycle counter
+				 DWT->CTRL &= ~DWT_CTRL_CYCCNTENA_Msk;
+			 }
+			 DWT->CYCCNT = 0; // reset the cycle counter
+		 }else {
+			 *reply += "taskstats=1 - starts stats capture, taskstats=0 stops capture, taskstats - reads stats";
+		 }
+	 }else{
 		// No command found
 		flag = ParseStatus::NOT_FOUND;
 	}

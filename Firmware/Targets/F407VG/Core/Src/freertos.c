@@ -65,12 +65,14 @@ void vApplicationMallocFailedHook(void);
 /* Functions needed when configGENERATE_RUN_TIME_STATS is on */
 __weak void configureTimerForRunTimeStats(void)
 {
-
+	CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+    DWT->CYCCNT = 0;
+    DWT->CTRL &= ~DWT_CTRL_CYCCNTENA_Msk; // disable till we explicitly enable with taskstats=1
 }
 
 __weak unsigned long getRunTimeCounterValue(void)
 {
-return 0;
+	 return DWT->CYCCNT;
 }
 /* USER CODE END 1 */
 
