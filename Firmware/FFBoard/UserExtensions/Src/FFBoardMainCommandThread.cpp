@@ -100,7 +100,7 @@ void FFBoardMainCommandThread::printErrors(std::string *reply){
 }
 
 ParseStatus FFBoardMainCommandThread::executeSysCommand(ParsedCommand* cmd,std::string* reply){
-	 static char statsBuffer[255] = {0};
+	 static char statsBuffer[512] = {0};
 	 ParseStatus flag = ParseStatus::OK;
 
 	if(cmd->cmd == "help"){
@@ -222,9 +222,12 @@ ParseStatus FFBoardMainCommandThread::executeSysCommand(ParsedCommand* cmd,std::
 				 DWT->CTRL &= ~DWT_CTRL_CYCCNTENA_Msk;
 			 }
 			 DWT->CYCCNT = 0; // reset the cycle counter
-		 }else {
-			 *reply += "taskstats=1 - starts stats capture, taskstats=0 stops capture, taskstats - reads stats";
 		 }
+	}else if(cmd->cmd == "tasklist"){
+		if(cmd->type == CMDtype::get || cmd->type == CMDtype::none){
+			vTaskList(statsBuffer);
+			*reply+= std::string("\nName\t\tState\tPrty\tStack\tNum\n") + statsBuffer;
+		}
 	 }else{
 		// No command found
 		flag = ParseStatus::NOT_FOUND;
