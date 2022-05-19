@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['rndis_5fmsg_5fstatus_5ft_0',['rndis_msg_status_t',['../group___c_d_c___r_n_d_i_s___common.html#ga68258ea157c329f651e9e539eb1b268d',1,'cdc_rndis.h']]],
-  ['rndis_5foid_5ftype_5ft_1',['rndis_oid_type_t',['../group___c_d_c___r_n_d_i_s___common.html#ga1f481916fd3d96784ade7285b72c8e7a',1,'cdc_rndis.h']]],
-  ['rndis_5fpacket_5ffilter_5ftype_5ft_2',['rndis_packet_filter_type_t',['../group___c_d_c___r_n_d_i_s___common.html#ga4e92796a7b6193715d6db3d55e52be58',1,'cdc_rndis.h']]]
+  ['odriveaxiserror_0',['ODriveAxisError',['../_o_drive_c_a_n_8h.html#a5ec2ce765e87449d72476383cc3ebdf1',1,'ODriveCAN.h']]],
+  ['odrivecan_5fcommands_1',['ODriveCAN_commands',['../_o_drive_c_a_n_8h.html#a539f13973573e98e043ff32d1b899068',1,'ODriveCAN.h']]],
+  ['odrivecontrolmode_2',['ODriveControlMode',['../_o_drive_c_a_n_8h.html#afbb352e995053f25fb271f45cd99b930',1,'ODriveCAN.h']]],
+  ['odriveencoderflags_3',['ODriveEncoderFlags',['../_o_drive_c_a_n_8h.html#aaa5729c3c570bb9e79f2dab90f0cc856',1,'ODriveCAN.h']]],
+  ['odriveinputmode_4',['ODriveInputMode',['../_o_drive_c_a_n_8h.html#af21aeb1ceaadca1a54dd9286cbffd9b5',1,'ODriveCAN.h']]],
+  ['odrivelocalstate_5',['ODriveLocalState',['../_o_drive_c_a_n_8h.html#abf9bd05cd369f434291d67fb39600086',1,'ODriveCAN.h']]],
+  ['odrivestate_6',['ODriveState',['../_o_drive_c_a_n_8h.html#aae12006ef57f334ef7abc1aea7edaa69',1,'ODriveCAN.h']]]
 ];
