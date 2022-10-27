@@ -12,7 +12,9 @@ var _t_m_c4671_8h =
     [ "TMC4671ABNConf", "struct_t_m_c4671_a_b_n_conf.html", "struct_t_m_c4671_a_b_n_conf" ],
     [ "TMC4671AENCConf", "struct_t_m_c4671_a_e_n_c_conf.html", "struct_t_m_c4671_a_e_n_c_conf" ],
     [ "TMC4671HALLConf", "struct_t_m_c4671_h_a_l_l_conf.html", "struct_t_m_c4671_h_a_l_l_conf" ],
-    [ "TMC4671Biquad", "struct_t_m_c4671_biquad.html", "struct_t_m_c4671_biquad" ],
+    [ "TMC4671Biquad_t", "struct_t_m_c4671_biquad__t.html", "struct_t_m_c4671_biquad__t" ],
+    [ "TMC4671Biquad_conf", "struct_t_m_c4671_biquad__conf.html", "struct_t_m_c4671_biquad__conf" ],
+    [ "TMC4671Biquad", "class_t_m_c4671_biquad.html", "class_t_m_c4671_biquad" ],
     [ "TMC4671", "class_t_m_c4671.html", "class_t_m_c4671" ],
     [ "TMC4671::TMC_ExternalEncoderUpdateThread", "class_t_m_c4671_1_1_t_m_c___external_encoder_update_thread.html", "class_t_m_c4671_1_1_t_m_c___external_encoder_update_thread" ],
     [ "TMC_1", "class_t_m_c__1.html", "class_t_m_c__1" ],
@@ -87,6 +89,15 @@ var _t_m_c4671_8h =
       [ "FullCalibration", "_t_m_c4671_8h.html#ad7d50073249f48de7e58d41071064a7ca1a1aaf34022bdc367fefa52bd812e060", null ],
       [ "ExternalEncoderInit", "_t_m_c4671_8h.html#ad7d50073249f48de7e58d41071064a7caa93eed0dbbc42a70bc2ea0869e63994e", null ]
     ] ],
+    [ "TMC_GpioMode", "_t_m_c4671_8h.html#aacd749e72feab7582be13cd7f4d414a6", [
+      [ "DebugSpi", "_t_m_c4671_8h.html#aacd749e72feab7582be13cd7f4d414a6a431de3d2985bdfed9c3d8ee75cf9196c", null ],
+      [ "DSAdcClkOut", "_t_m_c4671_8h.html#aacd749e72feab7582be13cd7f4d414a6a6352d2cd0dd6eaa5bd26c4dae7b6107d", null ],
+      [ "DSAdcClkIn", "_t_m_c4671_8h.html#aacd749e72feab7582be13cd7f4d414a6a68fe401a9c6bbcdf302bfcaabb5e9480", null ],
+      [ "Aout_Bin", "_t_m_c4671_8h.html#aacd749e72feab7582be13cd7f4d414a6af1394999c35f14f59b9024ac5dc0ae48", null ],
+      [ "Ain_Bout", "_t_m_c4671_8h.html#aacd749e72feab7582be13cd7f4d414a6afbda66f8efe0aad41b637b2f21d918b1", null ],
+      [ "Aout_Bout", "_t_m_c4671_8h.html#aacd749e72feab7582be13cd7f4d414a6a90b702567e047037297f201326d79096", null ],
+      [ "Ain_Bin", "_t_m_c4671_8h.html#aacd749e72feab7582be13cd7f4d414a6aa94a2169cb33537b70bfc78d9abadd43", null ]
+    ] ],
     [ "TMC_HW_Ver", "_t_m_c4671_8h.html#a1064cdca049007c828bd4a5b28f51d71", [
       [ "NONE", "_t_m_c4671_8h.html#a1064cdca049007c828bd4a5b28f51d71ab50339a10e1de285ac99d4c3990b8693", null ],
       [ "v1_0", "_t_m_c4671_8h.html#a1064cdca049007c828bd4a5b28f51d71a09d7da9ea375f1827517b45b61cfc6b8", null ],
@@ -109,6 +120,12 @@ var _t_m_c4671_8h =
       [ "NONE", "_t_m_c4671_8h.html#af365ac996597ce7cdb3ee95b7d603cbeab50339a10e1de285ac99d4c3990b8693", null ],
       [ "coldStart", "_t_m_c4671_8h.html#af365ac996597ce7cdb3ee95b7d603cbeaa7fc932f3ea78360533e9ca9b3d3dd40", null ],
       [ "warmStart", "_t_m_c4671_8h.html#af365ac996597ce7cdb3ee95b7d603cbea946b09e5226bb0c761bd81a7d982d435", null ]
+    ] ],
+    [ "TMCbiquadpreset", "_t_m_c4671_8h.html#a90c81de5684b1e1186ca6013a2d8a989", [
+      [ "none", "_t_m_c4671_8h.html#a90c81de5684b1e1186ca6013a2d8a989a334c4a4c42fdb79d7ebc3e73b517e6f8", null ],
+      [ "lowpass", "_t_m_c4671_8h.html#a90c81de5684b1e1186ca6013a2d8a989af4264a824899ff8f0fc5962ff60b9cef", null ],
+      [ "notch", "_t_m_c4671_8h.html#a90c81de5684b1e1186ca6013a2d8a989a9ce862bf60cc175e6973adb48e7d48b3", null ],
+      [ "peak", "_t_m_c4671_8h.html#a90c81de5684b1e1186ca6013a2d8a989a34213baa0bd3b53ee9dd8098e70da2c7", null ]
     ] ],
     [ "VelSelection", "_t_m_c4671_8h.html#a864ad6319d56116bc88bb51ae28cd2b2", [
       [ "PhiE", "_t_m_c4671_8h.html#a864ad6319d56116bc88bb51ae28cd2b2a7776db0a1a53ff88d4b79db48b8e8531", null ],
