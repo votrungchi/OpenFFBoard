@@ -48,6 +48,7 @@ var files_dup =
     [ "constants.h", "constants_8h.html", "constants_8h" ],
     [ "cpp_target_config.h", "cpp__target__config_8h.html", "cpp__target__config_8h" ],
     [ "cppmain.h", "cppmain_8h.html", "cppmain_8h" ],
+    [ "CRC.h", "_c_r_c_8h.html", "_c_r_c_8h" ],
     [ "critical.hpp", "critical_8hpp.html", [
       [ "cpp_freertos::CriticalSection", "classcpp__freertos_1_1_critical_section.html", "classcpp__freertos_1_1_critical_section" ]
     ] ],
@@ -72,6 +73,11 @@ var files_dup =
     [ "Filters.h", "_filters_8h.html", "_filters_8h" ],
     [ "flash_helpers.h", "flash__helpers_8h.html", "flash__helpers_8h" ],
     [ "global_callbacks.h", "global__callbacks_8h.html", "global__callbacks_8h" ],
+    [ "GPIOPin.h", "_g_p_i_o_pin_8h.html", [
+      [ "GpioPin", "class_gpio_pin.html", "class_gpio_pin" ],
+      [ "OutputPin", "class_output_pin.html", "class_output_pin" ],
+      [ "InputPin", "class_input_pin.html", "class_input_pin" ]
+    ] ],
     [ "HidCommandInterface.h", "_hid_command_interface_8h.html", "_hid_command_interface_8h" ],
     [ "HidFFB.h", "_hid_f_f_b_8h.html", [
       [ "HidFFB", "class_hid_f_f_b.html", "class_hid_f_f_b" ]
@@ -102,9 +108,6 @@ var files_dup =
       [ "cpp_freertos::MutexRecursive", "classcpp__freertos_1_1_mutex_recursive.html", "classcpp__freertos_1_1_mutex_recursive" ],
       [ "cpp_freertos::LockGuard", "classcpp__freertos_1_1_lock_guard.html", "classcpp__freertos_1_1_lock_guard" ]
     ] ],
-    [ "OutputPin.h", "_output_pin_8h.html", [
-      [ "OutputPin", "class_output_pin.html", "class_output_pin" ]
-    ] ],
     [ "PersistentStorage.h", "_persistent_storage_8h.html", [
       [ "PersistentStorage", "class_persistent_storage.html", "class_persistent_storage" ]
     ] ],
@@ -129,6 +132,9 @@ var files_dup =
       [ "cpp_freertos::Semaphore", "classcpp__freertos_1_1_semaphore.html", "classcpp__freertos_1_1_semaphore" ],
       [ "cpp_freertos::BinarySemaphore", "classcpp__freertos_1_1_binary_semaphore.html", "classcpp__freertos_1_1_binary_semaphore" ],
       [ "cpp_freertos::CountingSemaphore", "classcpp__freertos_1_1_counting_semaphore.html", "classcpp__freertos_1_1_counting_semaphore" ]
+    ] ],
+    [ "SerialFFB.h", "_serial_f_f_b_8h.html", [
+      [ "SerialFFB", "class_serial_f_f_b.html", "class_serial_f_f_b" ]
     ] ],
     [ "Singleton.h", "_singleton_8h.html", [
       [ "Singleton< T >", "class_singleton.html", "class_singleton" ]
@@ -197,6 +203,7 @@ var files_dup =
     [ "CommandInterface.cpp", "_command_interface_8cpp.html", "_command_interface_8cpp" ],
     [ "cppmain.cpp", "cppmain_8cpp.html", "cppmain_8cpp" ],
     [ "cqueue.cpp", "cqueue_8cpp.html", null ],
+    [ "CRC.cpp", "_c_r_c_8cpp.html", "_c_r_c_8cpp" ],
     [ "cread_write_lock.cpp", "cread__write__lock_8cpp.html", null ],
     [ "csemaphore.cpp", "csemaphore_8cpp.html", null ],
     [ "ctasklet.cpp", "ctasklet_8cpp.html", null ],
@@ -223,6 +230,7 @@ var files_dup =
     [ "PersistentStorage.cpp", "_persistent_storage_8cpp.html", null ],
     [ "ringbuffer.c", "ringbuffer_8c.html", "ringbuffer_8c" ],
     [ "ringbufferwrapper.cpp", "ringbufferwrapper_8cpp.html", null ],
+    [ "SerialFFB.cpp", "_serial_f_f_b_8cpp.html", null ],
     [ "SPI.cpp", "_s_p_i_8cpp.html", "_s_p_i_8cpp" ],
     [ "SpiHandler.cpp", "_spi_handler_8cpp.html", null ],
     [ "SystemCommands.cpp", "_system_commands_8cpp.html", "_system_commands_8cpp" ],
@@ -340,6 +348,12 @@ var files_dup =
       [ "EncoderBissC", "class_encoder_biss_c.html", "class_encoder_biss_c" ]
     ] ],
     [ "EncoderLocal.h", "_encoder_local_8h.html", "_encoder_local_8h" ],
+    [ "EncoderSSI.h", "_encoder_s_s_i_8h.html", [
+      [ "EncoderSSI", "class_encoder_s_s_i.html", "class_encoder_s_s_i" ]
+    ] ],
+    [ "FFBHIDExt.h", "_f_f_b_h_i_d_ext_8h.html", [
+      [ "FFBHIDExt", "class_f_f_b_h_i_d_ext.html", "class_f_f_b_h_i_d_ext" ]
+    ] ],
     [ "FFBHIDMain.h", "_f_f_b_h_i_d_main_8h.html", [
       [ "FFBHIDMain", "class_f_f_b_h_i_d_main.html", "class_f_f_b_h_i_d_main" ]
     ] ],
@@ -365,6 +379,7 @@ var files_dup =
       [ "MidiMain", "class_midi_main.html", "class_midi_main" ]
     ] ],
     [ "MotorPWM.h", "_motor_p_w_m_8h.html", "_motor_p_w_m_8h" ],
+    [ "MotorSimplemotion.h", "_motor_simplemotion_8h.html", "_motor_simplemotion_8h" ],
     [ "MtEncoderSPI.h", "_mt_encoder_s_p_i_8h.html", [
       [ "MtEncoderSPI", "class_mt_encoder_s_p_i.html", "class_mt_encoder_s_p_i" ]
     ] ],
@@ -391,16 +406,19 @@ var files_dup =
     [ "eeprom_addresses.c", "eeprom__addresses_8c.html", "eeprom__addresses_8c" ],
     [ "EncoderBissC.cpp", "_encoder_biss_c_8cpp.html", "_encoder_biss_c_8cpp" ],
     [ "EncoderLocal.cpp", "_encoder_local_8cpp.html", null ],
+    [ "EncoderSSI.cpp", "_encoder_s_s_i_8cpp.html", null ],
+    [ "FFBHIDExt.cpp", "_f_f_b_h_i_d_ext_8cpp.html", null ],
     [ "FFBHIDMain.cpp", "_f_f_b_h_i_d_main_8cpp.html", "_f_f_b_h_i_d_main_8cpp" ],
     [ "FFBHIDMain_commmands.cpp", "_f_f_b_h_i_d_main__commmands_8cpp.html", null ],
     [ "FFBJoystick.cpp", "_f_f_b_joystick_8cpp.html", null ],
     [ "FFBoardMain.cpp", "_f_f_board_main_8cpp.html", null ],
     [ "FFBWheel.cpp", "_f_f_b_wheel_8cpp.html", null ],
     [ "LocalAnalog.cpp", "_local_analog_8cpp.html", "_local_analog_8cpp" ],
-    [ "LocalButtons.cpp", "_local_buttons_8cpp.html", null ],
+    [ "LocalButtons.cpp", "_local_buttons_8cpp.html", "_local_buttons_8cpp" ],
     [ "mainclass_chooser.cpp", "mainclass__chooser_8cpp.html", "mainclass__chooser_8cpp" ],
     [ "MidiMain.cpp", "_midi_main_8cpp.html", null ],
     [ "MotorPWM.cpp", "_motor_p_w_m_8cpp.html", "_motor_p_w_m_8cpp" ],
+    [ "MotorSimplemotion.cpp", "_motor_simplemotion_8cpp.html", "_motor_simplemotion_8cpp" ],
     [ "MtEncoderSPI.cpp", "_mt_encoder_s_p_i_8cpp.html", null ],
     [ "ODriveCAN.cpp", "_o_drive_c_a_n_8cpp.html", null ],
     [ "PCF8574.cpp", "_p_c_f8574_8cpp.html", null ],
@@ -411,5 +429,6 @@ var files_dup =
     [ "usb_descriptors.cpp", "usb__descriptors_8cpp.html", "usb__descriptors_8cpp" ],
     [ "usb_hid_1ffb_desc.c", "usb__hid__1ffb__desc_8c.html", "usb__hid__1ffb__desc_8c" ],
     [ "usb_hid_2ffb_desc.c", "usb__hid__2ffb__desc_8c.html", "usb__hid__2ffb__desc_8c" ],
-    [ "VescCAN.cpp", "_vesc_c_a_n_8cpp.html", null ]
+    [ "usb_hid_gamepad.c", "usb__hid__gamepad_8c.html", "usb__hid__gamepad_8c" ],
+    [ "VescCAN.cpp", "_vesc_c_a_n_8cpp.html", "_vesc_c_a_n_8cpp" ]
 ];

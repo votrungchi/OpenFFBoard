@@ -21,6 +21,7 @@ var hierarchy =
     [ "CAN_rx_msg", "struct_c_a_n__rx__msg.html", null ],
     [ "CAN_tx_msg", "struct_c_a_n__tx__msg.html", null ],
     [ "CanHandler", "class_can_handler.html", [
+      [ "CANPort", "class_c_a_n_port.html", null ],
       [ "CanAnalogBase", "class_can_analog_base.html", [
         [ "CanAnalog< AMOUNT >", "class_can_analog.html", null ]
       ] ],
@@ -31,7 +32,8 @@ var hierarchy =
         [ "ODriveCAN2", "class_o_drive_c_a_n2.html", null ]
       ] ],
       [ "VescCAN", "class_vesc_c_a_n.html", [
-        [ "VESC_1", "class_v_e_s_c__1.html", null ]
+        [ "VESC_1", "class_v_e_s_c__1.html", null ],
+        [ "VESC_2", "class_v_e_s_c__2.html", null ]
       ] ]
     ] ],
     [ "CDCcomm", "class_c_d_ccomm.html", null ],
@@ -56,6 +58,11 @@ var hierarchy =
       [ "Encoder", "class_encoder.html", [
         [ "EncoderBissC", "class_encoder_biss_c.html", null ],
         [ "EncoderLocal", "class_encoder_local.html", null ],
+        [ "EncoderSSI", "class_encoder_s_s_i.html", null ],
+        [ "MotorSimplemotion", "class_motor_simplemotion.html", [
+          [ "MotorSimplemotion1", "class_motor_simplemotion1.html", null ],
+          [ "MotorSimplemotion2", "class_motor_simplemotion2.html", null ]
+        ] ],
         [ "MtEncoderSPI", "class_mt_encoder_s_p_i.html", null ],
         [ "ODriveCAN", "class_o_drive_c_a_n.html", null ],
         [ "TMC4671", "class_t_m_c4671.html", [
@@ -68,6 +75,7 @@ var hierarchy =
         [ "CanBridge", "class_can_bridge.html", null ],
         [ "CustomMain", "class_custom_main.html", null ],
         [ "FFBHIDMain", "class_f_f_b_h_i_d_main.html", [
+          [ "FFBHIDExt", "class_f_f_b_h_i_d_ext.html", null ],
           [ "FFBJoystick", "class_f_f_b_joystick.html", null ],
           [ "FFBWheel", "class_f_f_b_wheel.html", null ]
         ] ],
@@ -76,6 +84,7 @@ var hierarchy =
       ] ],
       [ "MotorDriver", "class_motor_driver.html", [
         [ "MotorPWM", "class_motor_p_w_m.html", null ],
+        [ "MotorSimplemotion", "class_motor_simplemotion.html", null ],
         [ "ODriveCAN", "class_o_drive_c_a_n.html", null ],
         [ "TMC4671", "class_t_m_c4671.html", null ],
         [ "VescCAN", "class_vesc_c_a_n.html", null ]
@@ -96,15 +105,18 @@ var hierarchy =
       [ "EffectsCalculator", "class_effects_calculator.html", null ],
       [ "EncoderBissC", "class_encoder_biss_c.html", null ],
       [ "EncoderLocal", "class_encoder_local.html", null ],
+      [ "EncoderSSI", "class_encoder_s_s_i.html", null ],
       [ "FFBoardMain", "class_f_f_board_main.html", null ],
       [ "I2CPort", "class_i2_c_port.html", null ],
       [ "LocalAnalog", "class_local_analog.html", null ],
       [ "LocalButtons", "class_local_buttons.html", null ],
       [ "MotorPWM", "class_motor_p_w_m.html", null ],
+      [ "MotorSimplemotion", "class_motor_simplemotion.html", null ],
       [ "MtEncoderSPI", "class_mt_encoder_s_p_i.html", null ],
       [ "ODriveCAN", "class_o_drive_c_a_n.html", null ],
       [ "PCF8574Buttons", "class_p_c_f8574_buttons.html", null ],
       [ "SPI_Buttons", "class_s_p_i___buttons.html", null ],
+      [ "SerialFFB", "class_serial_f_f_b.html", null ],
       [ "ShifterAnalog", "class_shifter_analog.html", null ],
       [ "SystemCommands", "class_system_commands.html", null ],
       [ "TMC4671", "class_t_m_c4671.html", null ],
@@ -128,6 +140,10 @@ var hierarchy =
     [ "effect_gain_t", "structeffect__gain__t.html", null ],
     [ "effect_scaler_t", "structeffect__scaler__t.html", null ],
     [ "effect_stat_t", "structeffect__stat__t.html", null ],
+    [ "EffectsControlItf", "class_effects_control_itf.html", [
+      [ "HidFFB", "class_hid_f_f_b.html", null ],
+      [ "SerialFFB", "class_serial_f_f_b.html", null ]
+    ] ],
     [ "Error", "class_error.html", null ],
     [ "ErrorHandler", "class_error_handler.html", [
       [ "Axis", "class_axis.html", null ],
@@ -156,7 +172,12 @@ var hierarchy =
     ] ],
     [ "FastAvg< T, LEN >", "class_fast_avg.html", null ],
     [ "FFB_Effect", "struct_f_f_b___effect.html", null ],
+    [ "FFB_Effect_Condition", "struct_f_f_b___effect___condition.html", null ],
     [ "GearRatio_t", "struct_gear_ratio__t.html", null ],
+    [ "GpioPin", "class_gpio_pin.html", [
+      [ "InputPin", "class_input_pin.html", null ],
+      [ "OutputPin", "class_output_pin.html", null ]
+    ] ],
     [ "hcd_devtree_info_t", "structhcd__devtree__info__t.html", null ],
     [ "hcd_event_t", "structhcd__event__t.html", null ],
     [ "hidd_interface_t", "structhidd__interface__t.html", null ],
@@ -197,7 +218,6 @@ var hierarchy =
     [ "ncm_interface_t", "structncm__interface__t.html", null ],
     [ "netd_interface_t", "structnetd__interface__t.html", null ],
     [ "osal_queue_def_t", "structosal__queue__def__t.html", null ],
-    [ "OutputPin", "class_output_pin.html", null ],
     [ "ParsedCommand", "struct_parsed_command.html", null ],
     [ "PersistentStorage", "class_persistent_storage.html", [
       [ "AnalogSource", "class_analog_source.html", null ],
@@ -207,6 +227,7 @@ var hierarchy =
       [ "EffectsCalculator", "class_effects_calculator.html", null ],
       [ "EncoderBissC", "class_encoder_biss_c.html", null ],
       [ "EncoderLocal", "class_encoder_local.html", null ],
+      [ "EncoderSSI", "class_encoder_s_s_i.html", null ],
       [ "FFBHIDMain", "class_f_f_b_h_i_d_main.html", null ],
       [ "I2CPort", "class_i2_c_port.html", null ],
       [ "MotorPWM", "class_motor_p_w_m.html", null ],
@@ -242,9 +263,12 @@ var hierarchy =
       [ "cpp_freertos::CountingSemaphore", "classcpp__freertos_1_1_counting_semaphore.html", null ]
     ] ],
     [ "Singleton< T >", "class_singleton.html", null ],
+    [ "MotorSimplemotion::Sm2FastUpdate", "struct_motor_simplemotion_1_1_sm2_fast_update.html", null ],
+    [ "MotorSimplemotion::Sm2FastUpdate_reply", "struct_motor_simplemotion_1_1_sm2_fast_update__reply.html", null ],
     [ "SPIConfig", "struct_s_p_i_config.html", null ],
     [ "SPIDevice", "class_s_p_i_device.html", [
       [ "EncoderBissC", "class_encoder_biss_c.html", null ],
+      [ "EncoderSSI", "class_encoder_s_s_i.html", null ],
       [ "MtEncoderSPI", "class_mt_encoder_s_p_i.html", null ],
       [ "SPI_Buttons", "class_s_p_i___buttons.html", null ],
       [ "ShifterAnalog::G27ShifterButtonClient", "class_shifter_analog_1_1_g27_shifter_button_client.html", null ],
@@ -312,6 +336,7 @@ var hierarchy =
     [ "tusb_desc_video_itf_hdr_t", "uniontusb__desc__video__itf__hdr__t.html", null ],
     [ "tusb_desc_vs_itf_t", "structtusb__desc__vs__itf__t.html", null ],
     [ "UARTDevice", "class_u_a_r_t_device.html", [
+      [ "MotorSimplemotion", "class_motor_simplemotion.html", null ],
       [ "UART_CommandInterface", "class_u_a_r_t___command_interface.html", null ]
     ] ],
     [ "UartHandler", "class_uart_handler.html", [
