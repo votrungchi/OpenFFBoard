@@ -1,10 +1,11 @@
 var NAVTREEINDEX6 =
 {
+"class_effects_calculator.html#ab03374bae6d7cd45b410a6dc1fd9a53d":[3,0,51,8],
+"class_effects_calculator.html#abec85aa5f013efad97ce9a4080607eab":[3,0,51,34],
 "class_effects_calculator.html#abf306c214197607e56e52e188a29b563":[3,0,51,32],
 "class_effects_calculator.html#abfcb256492a5378e74a981ca0ed09ba9":[3,0,51,1],
 "class_effects_calculator.html#ac83b35e4836fa729a6014237e4954453":[3,0,51,42],
 "class_effects_calculator.html#ad00aef28323b412e4342273916a1b6f9":[3,0,51,0],
-"class_effects_calculator.html#ad1084ed5adb7cf8cb75b97e2d20b8b2d":[3,0,51,17],
 "class_effects_calculator.html#ad17d069e60c1c4c7fe5cc04ba9b020c3":[3,0,51,41],
 "class_effects_calculator.html#ad5cf3698786cfe93a66634322d59d3cf":[3,0,51,35],
 "class_effects_calculator.html#ad7b13e35408af18b0e270596114acab0":[3,0,51,33],
@@ -18,6 +19,7 @@ var NAVTREEINDEX6 =
 "class_effects_calculator.html#af4af34b898ad044a41773300632d28ed":[3,0,51,19],
 "class_effects_calculator.html#af95dd173c901180327fa41f2632117bc":[3,0,51,20],
 "class_effects_calculator.html#af98dcbc5cf6eebd8c07e16413fbfef60":[3,0,51,44],
+"class_effects_calculator.html#afa38267e4d09fd16e53f9be5803a330a":[3,0,51,5],
 "class_effects_calculator.html#aff0d432b9415a4861c93027ea8ae06ff":[3,0,51,10],
 "class_effects_control_itf.html":[3,0,52],
 "class_effects_control_itf.html#a02bd93bcb6d6e4b7c56d14e00468610f":[3,0,52,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641ada71b1503bb73853056d1ec2788927b6e9":[3,0,65,0,2],
 "class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641ada72130ce5726057133afda6ebea5e59c0":[3,0,65,0,6],
 "class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641ada849a1e676206d4b8a6f4d45c9e6b7818":[3,0,65,0,0],
-"class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641ada9b1a82f3f43868f58bdc18e7c4cfa08f":[3,0,65,0,7],
-"class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641adaa6b2715f3193a6cf98362d261c39c964":[3,0,65,0,5],
-"class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641adaa9986b4f7deaf212691871359a4873bd":[3,0,65,0,11]
+"class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641ada9b1a82f3f43868f58bdc18e7c4cfa08f":[3,0,65,0,7]
 };

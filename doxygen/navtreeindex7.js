@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641adaa6b2715f3193a6cf98362d261c39c964":[3,0,65,0,5],
+"class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641adaa9986b4f7deaf212691871359a4873bd":[3,0,65,0,11],
 "class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641adac9d027c8190d1a4e5d5c05e17a140eb3":[3,0,65,0,3],
 "class_f_f_b_h_i_d_main.html#a632f99d11cc2d6623e7341d704d641adaf63923b9ae1d431929e82c8d9d77900d":[3,0,65,0,10],
 "class_f_f_b_h_i_d_main.html#a66ca243143ee28446f0ed853a4e1ee59":[3,0,65,16],
@@ -98,9 +100,11 @@ var NAVTREEINDEX7 =
 "class_fast_avg.html#aae7319a915ab6c4a34cb441e2b8014b1":[3,0,61,0],
 "class_gpio_pin.html":[3,0,71],
 "class_gpio_pin.html#a1c98c7b90e57bdc48a43d3360d0bf52d":[3,0,71,0],
-"class_gpio_pin.html#a26e8762e3bb00e9e0eb8491539c9fc1b":[3,0,71,2],
-"class_gpio_pin.html#a6ea7b33fdeb52edaebbdb73b63b8bf75":[3,0,71,3],
-"class_gpio_pin.html#ac99d4469997103cd9e467c093e6a3037":[3,0,71,1],
+"class_gpio_pin.html#a26e8762e3bb00e9e0eb8491539c9fc1b":[3,0,71,4],
+"class_gpio_pin.html#a34e446b514dc0cc83d89a50446f47926":[3,0,71,1],
+"class_gpio_pin.html#a6ea7b33fdeb52edaebbdb73b63b8bf75":[3,0,71,5],
+"class_gpio_pin.html#ac99d4469997103cd9e467c093e6a3037":[3,0,71,3],
+"class_gpio_pin.html#afd0a6e69194e5b376c0538c346bd922f":[3,0,71,2],
 "class_h_i_d___command_interface.html":[3,0,74],
 "class_h_i_d___command_interface.html#a06b4fce172baa678a0cc1d4e30ddb9c3":[3,0,74,13],
 "class_h_i_d___command_interface.html#a13031739d485175d52dfad89a1a3b5d1":[3,0,74,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "class_local_buttons.html#a694a8f21ace9151feebbbc978296f686":[3,0,89,16],
 "class_local_buttons.html#a74bc45bea2f205c8550cb89f5f35a2c7":[3,0,89,5],
 "class_local_buttons.html#a754511987556e0b1d8c82cf6446e5a60":[3,0,89,13],
-"class_local_buttons.html#a83177d23aeea9bfe8a90d75eee957449":[3,0,89,11],
-"class_local_buttons.html#a88201e8c5a8c29690d5cc675dbc14b31":[3,0,89,12],
-"class_local_buttons.html#a94fb54e65859041ee2c6b63c4aaf8221":[3,0,89,8],
-"class_local_buttons.html#aa7fac7ae24e3f20438ec1a97962db1bb":[3,0,89,2],
-"class_local_buttons.html#aa869996657bb5193259691317dc18619":[3,0,89,14]
+"class_local_buttons.html#a83177d23aeea9bfe8a90d75eee957449":[3,0,89,11]
 };
